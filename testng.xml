@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite parallel="tests" name="Autothon" data-provider-thread-count="1">
+
+        <!--listener class-name="Listeners.MyListener"></listener-->
+ <!--   <listeners>
+        <listener class-name="Listeners.MyListener"></listener>
+    </listeners>-->
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <test name="ChromeTest">
+
+        <classes>
+
+            <class name="testcases.Autothon" />
+
+        </classes>
+
+    </test>
+</suite>

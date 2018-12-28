@@ -1,0 +1,16 @@
+# to configure docker
+
+1. to start selenium hub
+docker run -d -P --name selenium-hub selenium/hub:3.6.0
+	
+2. to link node
+docker run -d -P --link selenium-hub:hub selenium/node-chrome-debug:3.6.0
+docker run -d -P --link selenium-hub:hub selenium/node-firefox-debug:3.6.0
+
+# to ocnfigure zalenium
+
+docker pull elgalu/selenium
+
+docker pull dosel/zalenium
+
+docker run --rm -ti --name zalenium -p 4444:4444 -v /var/run/docker.sock:/var/run/docker.sock --privileged dosel/zalenium start
